@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var salam; //membuat variable
+      salam = "Selamat pagi<br>"; //mengisi/mengubah isi variable
+
+      document.writeln(salam);
+      document.writeln(salam);
+      salam = "Selamat malam<br>"; //mengubah isi
+      document.writeln(salam);
+      salam = 100; //mengubah isi menjadi Number
+      document.writeln(salam);
+
+      //atau
+      var contoh = 3.14;
+      document.writeln("<br>" + contoh + "<br>");
+
+      //Kata Kunci let dan const
+      //ganti var menjadi let karena kesalahan desain
+
+      //let => untuk mengganti var
+      let firstName = "arfian";
+      document.writeln(firstName);
+
+      //kalau let/var data bisa diubah
+      //const => tidak bisa diubah (immutable) / konstan
+      const lastName = "adi";
+      //   lastName = "ws"; //error
+
+      /*
+      Masalah variable var
+      alasan:
+      1. karena var tidak memiliki block scope
+      */
+    </script>
+  </body>
+</html>

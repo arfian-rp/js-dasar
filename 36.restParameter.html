@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Rest Parameter => fitur mengirimkan data sebanyak-banyak nya pada satu parameter
+      //dan secara otomatis dikonversi jadi array
+      //rest parameter hanya boleh ada 1 dan harus diakhir parameter function
+      function getRataRata(...data) {
+        let total = 0;
+        data.map((e) => {
+          total += e;
+        });
+        return total / data.length;
+      }
+      document.write(`<p>${getRataRata(10, 30, 140, 43)}</p>`);
+
+      //Spread Syntax
+      //apabila terlanjur menggunakan array
+      const data = [7, 2, 2, 54, 3, 46, 42];
+      document.write(`<p>${getRataRata(...data)}</p>`);
+
+      //Arguments Object
+      //sebelum ada rest param, di JS sudah ada arguments object
+      function getRataRataOld() {
+        let total = 0;
+        arguments.map((e) => {
+          //bawaan function JS
+          total += e;
+        });
+        return total / data.length;
+      }
+      document.write(`<p>${getRataRata(10, 30, 140, 43)}</p>`);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    f12
+    <script>
+      //Destructuring => membongkar value di array atau object ke variable-variable
+      //Array
+      (() => {
+        function hitungArray(a, b) {
+          return [a * b, a / b, a + b, a - b];
+        }
+        const [kali, bagi, ...others] = hitungArray(3, 7); //others=>spread operator (:Array)
+        console.info(kali);
+        console.info(bagi);
+        console.info(others);
+
+        console.log(`batas`);
+
+        //Destructuring function parameter
+        function sum([a, b]) {
+          console.info(a + b);
+        }
+        let bilangan = [12, 6];
+        sum(bilangan);
+      })();
+
+      console.log(`batas`);
+
+      //Object
+      (() => {
+        function hitungObject(a, b) {
+          let kali = a * b;
+          let bagi = a / b;
+          let tambah = a + b;
+          let kurang = a - b;
+          return { tambah, kurang, kali, bagi };
+          //atau
+          // return { kali:kali, bagi:bagi, tambah:tambah, kurang:kurang };
+        }
+        //kalau object tidak harus urut
+        const { kali: KALI, bagi, ...others } = hitungObject(44, 77); //kali: KALI => mengganti variable
+        console.info(KALI);
+        console.info(bagi);
+        console.info(others);
+
+        console.log(`batas`);
+
+        //Destructuring Nested Object
+        (() => {
+          const person = {
+            FN: "Alexandre",
+            LN: "Grahmbell",
+            age: 50,
+            gender: "Male",
+            address: {
+              city: "Malang",
+              country: "Indonesia",
+              street: "JL.Raya",
+            },
+          };
+
+          const {
+            FN,
+            LN,
+            address: { country, city, street },
+            ...others
+          } = person;
+
+          console.info(FN);
+          console.info(LN);
+          console.info(country);
+          console.info(city);
+          console.info(street);
+          console.info(others);
+
+          console.log(`batas`);
+
+          //Destructuring function parameter
+          function printProfile({ FN, LN, address: { country, city, street }, age, gender }) {
+            console.info(FN);
+            console.info(LN);
+            console.info(country);
+            console.info(street);
+            console.info(age);
+            console.info(gender);
+          }
+          printProfile(person);
+        })();
+      })();
+
+      console.log(`batas`);
+
+      //Default Value
+      (() => {
+        {
+          //Array
+          const name = ["Andhika", "Putra"];
+          let [FN, LN, FULL = "andhika putra"] = name;
+          console.info(FN);
+          console.info(LN);
+          console.info(FULL);
+        }
+
+        console.log(`batas`);
+
+        {
+          //Object
+          const name = {
+            first: "Ahmed",
+            last: "Putra",
+          };
+          let { first, last, FULL = "andhika putra" } = name;
+          console.info(first);
+          console.info(last);
+          console.info(FULL);
+        }
+      })();
+    </script>
+  </body>
+</html>

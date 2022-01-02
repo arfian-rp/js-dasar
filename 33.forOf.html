@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //For Of => digunakan untuk melakukan iterasi property atau index,
+      //tidak bisa digunakan di object
+      const ARRAY = ["sapi", "kambing", "macan"];
+      for (let item of ARRAY) {
+        document.write(`<p>${item}</p>`);
+      }
+
+      //bisa juga string
+
+      const STRING = "ARfian Rp";
+      for (let char of STRING) {
+        document.write(`<p>${char}</p>`);
+      }
+    </script>
+  </body>
+</html>

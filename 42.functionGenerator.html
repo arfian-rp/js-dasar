@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    f12
+    <br />
+    <script>
+      //Function Generator => function untuk membuat data generator
+      //Generator => data yang bisa diintegrasi seperti array
+      //untuk membuat function generator, kita perlu menggunakan tanda * setelah kata function
+      //dan untuk mengembalikan data di tiap iterasi, kita bisa gunakan kata kunci yield diikuti datanya
+      //data generator hanya bisa diakses dengan iterasi (bukan array)
+      function* createNames() {
+        yield "Arfian";
+        yield "Andika";
+        yield "Radit";
+      }
+      const names = createNames();
+      document.writeln(names + "<br>"); //generator
+      //hanya bisa di iterasi
+      for (let name of names) {
+        document.writeln(name + "<br>"); //generator
+      }
+
+      //Penggunaan lebih kompleks
+      //Generator bersifat Lazy => setiap narik data lalu akan dieksekusi selanjutnya
+      //Lazy
+      function* buatGanjil(value) {
+        for (let i = 1; i <= value; i++) {
+          if (i % 2 === 1) {
+            console.log(`Yield - ${i}`);
+            yield i;
+          }
+        }
+      }
+      for (let number of buatGanjil(100)) {
+        console.info(number);
+      }
+
+      console.log(`batas`);
+
+      //Eager (bukan generator)
+      function buatGanjilArray(value) {
+        let result = [];
+        for (let i = 1; i <= value; i++) {
+          if (i % 2 === 1) {
+            console.info(`${i} adalah ganjil`);
+            result.push(i);
+          }
+        }
+        return result;
+      }
+      for (let number of buatGanjilArray(100)) {
+        console.info(number);
+      }
+
+      console.log(`batas`);
+
+      //ambil satu-satu
+      const angkaGanjil = buatGanjil(10);
+      console.info(angkaGanjil.next().value);
+      console.info(angkaGanjil.next().value);
+      console.info(angkaGanjil.next().value);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    f12
+    <script>
+      //by default code JS dijalankan tidak strict (sloppy mode)
+      //Strict Mode => saat dijalankan Strict mode akan merubah beberapa cara kerja JS seperti:
+      /*
+        1. merubah beberapa JS error dari tadinya silent error, menjadi throw error (terlihat)
+        2. memperbaiki beberapa kesalahan engine JS untuk optimasi
+        3. menolak beberapa kode perintah yang kedepanya akan digunakan di ECMAScript
+
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode
+        */
+
+      //   "use strict"; //untuk menyalakan strict mode
+
+      function useStrictMode() {
+        "use strict"; //untuk menyalakan strict mode khusus di function ini
+        // with(){
+        //error
+        // }
+      }
+    </script>
+  </body>
+</html>

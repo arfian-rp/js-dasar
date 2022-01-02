@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    f12
+    <script>
+      //membuat objk literal
+      var obj1 = {
+        nama: "adi",
+        kota: "sumedang",
+        "nama lengkap": "adi kurniawan",
+      };
+      console.table(obj1);
+      console.log(obj1.nama);
+
+      //membuat objk dgn function declaration
+      function makeobj(nama, kota) {
+        var obj = {
+          nama,
+          kota,
+        };
+        return obj;
+      }
+
+      var obj2 = makeobj("eka", "tuban");
+      console.table(obj2);
+
+      //membuat objk dgn constructor function
+      function makeobj2(nama, kota) {
+        this.nama = nama;
+        this.kota = kota;
+      }
+      var obj3 = new makeobj2("dimas", "surabaya");
+      console.table(obj3);
+
+      //object.create()
+      const methodObj = {
+        salam: function () {
+          return "namaku " + this.nama;
+        },
+      };
+      function OBJ(nama) {
+        let objek = Object.create(methodObj);
+        objek.nama = nama;
+        return objek;
+      }
+      var obj4 = OBJ("adi");
+      console.log(obj4.salam());
+
+      //Mengubah atau Menghapus
+      obj1.kota = "Denpasar";
+      console.table(obj1);
+      obj1["kota"] = "Lamongan";
+      console.table(obj1);
+
+      //Menghapus
+      delete obj1["nama lengkap"];
+      console.table(obj1);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    f12
+    <script>
+      //this => referensi ke object milik siapa
+      console.info(this); //this di global
+
+      function F() {
+        console.info(this); //this di outer function
+        function F1() {
+          console.info(this); //this di inner function
+        }
+        F1();
+      }
+      F();
+
+      const person = {
+        name: "Arfian",
+        F: function () {
+          console.info(this); //this di object method
+        },
+      };
+      person.F();
+
+      //contoh penggunaan this
+      const orang = {
+        name: "Arfian",
+        sayHello: function (name) {
+          console.log(`Hello ${name} my name is ${this.name}`); //this.name mengakses property name milik orang
+        },
+      };
+      orang.sayHello("eko");
+    </script>
+  </body>
+</html>

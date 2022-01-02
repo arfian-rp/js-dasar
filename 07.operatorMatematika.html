@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Operator Aritmatika
+      /*
+      -----------------------------------
+      operator      |       keterangan
+      -----------------------------------
+      +             |       pertambahan
+      -             |       pengurangan
+      *             |       perkalian
+      **            |       eksponensial
+      /             |       pembagian
+      %             |       sisa bagi
+      -----------------------------------
+      */
+
+      document.write("<textarea cols='100' rows='10'>\n");
+      document.writeln(15 + 3);
+      document.writeln(15 - 3);
+      document.writeln(15 * 3);
+      document.writeln(15 ** 3);
+      document.writeln(15 / 3);
+      document.writeln(15 % 3);
+      document.write("</textarea>");
+
+      //Operator Augmented Assigments
+      /*
+      ------------------------------------------------
+      operator          |       augmented assigments
+      ------------------------------------------------
+      result=result+10  |       result+=10
+
+                    dan seterusnya
+      ------------------------------------------------
+
+      */
+      let res = 10;
+      document.writeln((res += 12) + "<br>");
+
+      //Operator Unary
+      /*
+      ---------------------------------------------------
+      operator    |   ket
+      ---------------------------------------------------
+      +           |   menandakan nilai positif (default)
+      -           |   menandakan nilai negatif
+      ++          |   increment, menaikkan 1 angka
+      --          |   decrement, menurunkan 1 angka
+      ---------------------------------------------------
+
+      */
+
+      document.writeln(+12 + "<br>");
+      document.writeln(-12 + "<br>");
+      document.writeln(++res + "<br>");
+      document.writeln(--res + "<br>");
+    </script>
+  </body>
+</html>

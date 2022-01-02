@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Arrow Function => alternatif pembuatan function lebih sederhana
+      /*
+      Kekurangan Arrow Function
+      1. tidak memiliki fitur arguments object
+      2. tidak mendukung function generator
+      3. tidak bisa mengakses this
+      4. tidak bisa mengakses super
+      */
+
+      const sayHi = (name) => {
+        document.write(`<p>Hi, ${name}.</p>`);
+      };
+
+      //atau jika kode hanya sebaris (meng-return)
+      let sayHello = (name) => document.write(`<p>Hi, ${name}.</p>`);
+      let plus = (a, b) => a + b; //return
+
+      sayHi("Arfian");
+      sayHello("adi");
+      document.write(`<p>${plus(12, 3)}</p>`);
+    </script>
+  </body>
+</html>

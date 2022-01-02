@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Function sebagai value
+      function sayHello(name) {
+        document.write(`<p>hello, ${name} 🙋‍♂️</p>`);
+      }
+      const hello = sayHello;
+      hello("Eko");
+
+      //Function di parameter (callback)
+      function giveMeName(callback) {
+        callback("Eko");
+      }
+
+      giveMeName(sayHello);
+      giveMeName(hello);
+    </script>
+  </body>
+</html>

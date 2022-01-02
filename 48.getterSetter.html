@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Getter => mengambil data
+      //Setter => mengubah data
+      const person = {
+        firstName: "Arfian",
+        lastName: "Dimas",
+        get fullName() {
+          //getter, meskipun function tetapi diakses seperti property
+          if (this.firstName === this.lastName) return this.firstName;
+          return `${this.firstName} ${this.lastName}`;
+        },
+        set fullName(value) {
+          //setter, meskipun function tetapi diakses seperti property
+          let full = value.split(" ");
+          this.firstName = full[0];
+          this.lastName = full[full.length - 1];
+        },
+      };
+      document.write(`<p>${person.fullName}</p>`); //mengakses getter
+      person.fullName = "ahmad andika fauzan"; //mengakses setter
+      document.write(`<p>${person.fullName}</p>`);
+    </script>
+  </body>
+</html>

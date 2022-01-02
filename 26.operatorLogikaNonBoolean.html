@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    f12
+    <script>
+      //OR => membaca dari kiri ke kanan
+      //akan mengambil nilai pertama yang truthy
+      //jika tidak satupun yang truthy, maka yang terakhir yang diambil
+      console.info("Hello" || 0);
+      console.info([] || "");
+      console.info("0" || "NOL");
+      console.info(1 || 0);
+
+      console.log(`batas`);
+
+      //AND => membaca dari kiri ke kanan
+      //akan mengambil nilai pertama yang falsy
+      //jika tidak satupun yang falsy, maka yang terakhir yang diambil
+      console.info("Hello" && 0);
+      console.info([] && "");
+      console.info("0" && "NOL");
+      console.info(1 && 0);
+    </script>
+  </body>
+</html>

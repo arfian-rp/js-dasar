@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Scope => area akses sebuah data
+      //Local scope => setiap membuat function kita membuat local scope untuk function tersebut, hanya bisa diakses di local scope
+      //Global scope => data diluat function, bisa diakses di local scope
+      let counter = 0; //Global scope
+
+      function hitMe() {
+        //local scope function hitMe
+        let contohLocalScope = 0;
+        counter++; //bisa diakses
+      }
+
+      function test() {
+        //tidak bisa diakses
+        //   document.write(`<p>${contohLocalScope}</p>`);
+      }
+
+      hitMe();
+      hitMe();
+      document.write(`<p>${counter}</p>`);
+      //tidak bisa diakses
+      //   document.write(`<p>${contohLocalScope}</p>`);
+
+      //Nested Function Scope
+      function first() {
+        let firstData = 0;
+
+        function second() {
+          let secondData = 1;
+          document.write(`<p>${secondData}</p>`); //bisa
+          document.write(`<p>${firstData}</p>`); //bisa
+        }
+
+        second();
+
+        //error, beda scope
+        // document.write(`<p>${secondData}</p>`); //bisa
+      }
+
+      first();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Debugger => proses mencari bug (debugging)
+      //fitur bawaan browser
+      //dengan debugger kita bisa menghentikan program diposisi yang diinginkan (breakpoint)
+      function createfullName(FN, MN, LN) {
+        debugger;
+        const fullName = `${MN} ${FN} ${LN} ${MN}`;
+        return fullName;
+      }
+      const name = createfullName("Ahmad", "Eka", "Irawan");
+      console.info(name);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    f12
+    <script>
+      //Array di JS bersifat dinamis (bisa bertambah sendirinya)
+      angka = [1, 2, 3, 4, 5]; //contoh array
+      console.table(angka);
+      console.log(angka[0]); // angka index ke 0
+      d = angka[2];
+      console.log(d);
+
+      x = [];
+      x[0] = 1;
+      x[1] = 4;
+      x[3] = 7;
+      console.table(x);
+
+      hewan = ["sapi", "kambing", "macan"];
+      console.table(hewan);
+
+      //Method di Array
+      console.log(angka.length); //mengambil panjang array
+      console.log(hewan.join()); //mengubah array jadi string
+      console.log(hewan.join(" "));
+      console.log(hewan.join("-"));
+
+      hewan.push("anjing", "kucing"); //menambah element di akhir array
+      console.table(hewan);
+
+      delete hewan[0]; //menghapus hewan index 0, namun index tidak bergeser
+      console.table(hewan);
+
+      hewan.pop(); //menghapus akhir array
+      console.table(hewan);
+
+      hewan.unshift("domba"); //menambah elemen di awal array
+      console.table(hewan);
+
+      hewan.shift(); //mengapus element di awal array
+      console.table(hewan);
+
+      arr = ["adi", "eko", "dimas", "dwi"];
+      newarr = arr.slice(1, 3); //memisah array menjadi array yg baru
+      console.table(arr);
+      console.table(newarr);
+
+      // splice(i awal, jml mau dihapus, elbaru1, elbaru2,...))
+      hewan.splice(2, 0, "harimau", "jaguar");
+      console.table(hewan);
+
+      //menampilkan array
+      for (let index = 0; index < angka.length; index++) {
+        const element = angka[index];
+        console.log(element);
+      }
+
+      angka.forEach((e, i) => {
+        console.log("i ke-" + i + " adalah " + e);
+      });
+
+      var newangka = angka.map((e) => {
+        return e * 6;
+      });
+      console.table(newangka);
+
+      var angkabaru = [3, 1, 4, 4, 6, 2, 6, 3, 2, 3, 2, 3, 4, 3, 2, 6];
+      var angka2 = angkabaru.filter((x) => {
+        //mencari elemen(lebih dari 1)
+        return x == 2;
+      });
+      console.table(angka2);
+
+      angka1 = angkabaru.find((x) => {
+        //mencari elemen(cuma bisa satu / pertama kali ditemukan)
+        return x == 1;
+      });
+      console.table(angka1);
+    </script>
+  </body>
+</html>
